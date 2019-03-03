@@ -82,7 +82,7 @@ resource "google_compute_firewall" "allow_http" {
   }
 
   target_tags = ["pi-hole"]
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = ["${var.local_ip}"]
 }
 
 resource "google_compute_address" "static_address" {
